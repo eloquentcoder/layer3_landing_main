@@ -34,13 +34,15 @@ export function ErrorMessage({ title = "Error", message, invoiceReference }: Err
 
       <div className="flex flex-col sm:flex-row gap-4 justify-center">
         {invoiceReference && (
-          <Button asChild variant="outline">
-            <Link href={`/invoice/${invoiceReference}`}>Try Again</Link>
-          </Button>
+          <Link href={`/invoice/${invoiceReference}`} className="w-full sm:w-auto">
+            <Button variant="outline" className="w-full">
+              Try Again
+            </Button>
+          </Link>
         )}
-        <Button asChild>
-          <Link href="/invoice">Lookup Another Invoice</Link>
-        </Button>
+        <Link href="/invoice" className="w-full sm:w-auto">
+          <Button className="w-full">Lookup Another Invoice</Button>
+        </Link>
       </div>
     </div>
   );
